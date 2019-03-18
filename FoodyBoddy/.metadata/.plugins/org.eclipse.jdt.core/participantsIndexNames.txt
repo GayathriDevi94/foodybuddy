@@ -1,0 +1,3 @@
+INDEX VERSION 1.131
+G:\FoodyBoddy\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1223790650.index
+\EcomFrontEnd\src\main\resources
