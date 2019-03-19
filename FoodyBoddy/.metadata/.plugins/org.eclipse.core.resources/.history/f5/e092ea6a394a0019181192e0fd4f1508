@@ -1,0 +1,11 @@
+package com.foodybuddy.EcomFrontend.Controller;
+
+import org.springframework.stereotype.Controller;
+@Controller
+public class HomeController {
+	@RequestMapping("/")
+	String indexpage()
+	{
+		return "index";
+	}
+}
