@@ -1,4 +1,4 @@
-package com.bytetricks.EcomBackend;
+package com.foodybuddy.EcomBackend;
 
 import java.util.Properties;
 
@@ -14,27 +14,21 @@ import org.springframework.orm.hibernate5.HibernateTransactionManager;
 import org.springframework.orm.hibernate5.LocalSessionFactoryBean;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
-
 @Configuration
 @EnableTransactionManagement
-@ComponentScan("com.bytetricks")
+@ComponentScan("com.foodybuddy")
 public class DbConfig 
 {
-	//Step 1: Create datasource
-	//(i) where is my db.(ii)what is the username and password
-	//(ii) what drivers i require.
 	@Bean
 	DataSource myDataSource()
 	{	
 		BasicDataSource basicDataSource=new BasicDataSource();
 		basicDataSource.setDriverClassName("org.h2.Driver");
-		basicDataSource.setUrl("jdbc:h2:~/proj409");
+		basicDataSource.setUrl("jdbc:h2:tcp://localhost/~/foodybuddy");
 		basicDataSource.setUsername("sa");
 		basicDataSource.setPassword("sa");
 		return basicDataSource;
 	}
-	
-	//Step 2: Set Hibernate Properties
 	
 	Properties myProperties()
 	{
@@ -44,18 +38,15 @@ public class DbConfig
 		properties.setProperty("hibernate.hbm2ddl.auto", "update");
 		return properties;
 	}
-	//Step 3: Create Session Factory
 	@Bean("sessionFactory")
 	LocalSessionFactoryBean localSessionFactoryBean()
 	{
 		LocalSessionFactoryBean  localSessionFactoryBean=new LocalSessionFactoryBean();
 		localSessionFactoryBean.setDataSource(myDataSource());
 		localSessionFactoryBean.setHibernateProperties(myProperties());
-		localSessionFactoryBean.setPackagesToScan("com.bytetricks.EcomBackend.model");
+		localSessionFactoryBean.setPackagesToScan("com.foodybuddy.EcomBackend.model");
 		return localSessionFactoryBean;
 	}
-	
-	//Step 4: Enable Transcation
 	
 	@Bean
 	@Autowired

@@ -1,4 +1,4 @@
-package com.bytetricks.EcomBackend;
+package com.foodybuddy.EcomBackend;
 
 /**
  * Hello world!
