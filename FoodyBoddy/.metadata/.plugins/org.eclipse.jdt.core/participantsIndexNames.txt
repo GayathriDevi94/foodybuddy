@@ -1,7 +1,0 @@
-INDEX VERSION 1.131
-G:\FoodyBoddy\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1867079578.index
-\EcomFrontEnd\src\main\java
-G:\FoodyBoddy\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1223790650.index
-\EcomFrontEnd\src\main\resources
-G:\FoodyBoddy\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\800537365.index
-\EcomFrontEnd\src\main\java

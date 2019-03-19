@@ -1,4 +1,0 @@
-#Tomcat publish data
-#Tue Mar 19 17:14:37 IST 2019
-org.eclipse.jst.jee.server\:/binary\:C\:\\Users\\Gayathri\\.m2\\repository\\org\\springframework\\spring-web\\5.1.5.RELEASE\\spring-web-5.1.5.RELEASE.jar=WEB-INF/lib/spring-web-5.1.5.RELEASE.jar
-org.eclipse.jst.jee.server\:EcomBackend=WEB-INF/lib/EcomBackend-0.0.1-SNAPSHOT.jar

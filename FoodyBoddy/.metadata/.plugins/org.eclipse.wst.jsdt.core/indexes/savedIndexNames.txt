@@ -1,6 +1,0 @@
-INDEX VERSION 1.4+G:\FoodyBoddy\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
-4199353751.index
-410657948.index
-108133835.index
-284715068.index
-3396014000.index
