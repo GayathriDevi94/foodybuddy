@@ -43,7 +43,7 @@ public class CategoryDaoImpl implements CategoryDao {
 		// TODO Auto-generated method stub
 		try
 		{
-			sessionFactory.getCurrentSession().delete(categname,Category.class);
+			sessionFactory.getCurrentSession().delete(selectOneCategory(categname));
 			return true;
 		}
 		catch(Exception e)

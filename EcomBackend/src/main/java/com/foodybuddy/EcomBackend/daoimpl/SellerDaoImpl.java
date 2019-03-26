@@ -50,7 +50,7 @@ public class SellerDaoImpl implements SellerDao {
 		// TODO Auto-generated method stub
 		try
 		{
-			sessionFactory.getCurrentSession().delete(sellername,Seller.class);
+			sessionFactory.getCurrentSession().delete(selectOneSeller(sellername));
 			return true;
 		}
 		catch(Exception e)
