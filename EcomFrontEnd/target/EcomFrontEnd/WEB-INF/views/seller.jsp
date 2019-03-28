@@ -7,15 +7,16 @@ body {
 	font-weight: 400;
 	line-height: 0.5;
 	text-align: left;
-	background-image:url("resources/images/image30.jpg");
-}
-
-.container {
-	
+	background-image: url("resources/images/image30.jpg");
 }
 
 .float {
 	z-index: 1;
+}
+.box
+{
+	margin-top:15%;
+
 }
 
 .form {
@@ -23,7 +24,7 @@ body {
 }
 
 input[type=text], input[type=password] {
-	width: 100%;
+	width:100%;
 	padding: 15px;
 	margin: 5px 0 22px 0;
 	display: inline-block;
@@ -65,12 +66,20 @@ input[type=text], input[type=password] {
 			<div class="box">
 				<div class="float">
 					<div class="row">
-						<form:form action="addseller" modelAttribute="sellobject">
+					<c:if test="${!editmode}">
+							<h1 class="title">Seller Credentials</h1>
+							<c:set var="action" value="addseller"></c:set>
+						</c:if>
+						<c:if test="${editmode}">
+							<h1 class="title">Edit Seller</</h1>
+							<c:set var="action" value="updateseller"></c:set>
+						</c:if>
+						<form:form action="${action}" modelAttribute="sellobject">
+						<c:if test="${editmode}">
+								<form:hidden path="sellerid" />
+							</c:if>
+						
 							<div class="container">
-								<h1>
-									<font color="red">Seller name</font>
-								</h1>
-
 								<hr>
 								<div>
 									<label for="seller"><b><font color="red">Seller
@@ -102,10 +111,7 @@ input[type=text], input[type=password] {
 										<th>SELLER ID</th>
 										<th>SELLER NAME</th>
 										<th>SELLER DESCRIPTION</th>
-										<td class="text-center"><a class='btn btn-info btn-xs'
-											href="#"><span class="glyphicon glyphicon-edit"></span>
-												Edit</a> <a href="#" class="btn btn-danger btn-xs"><span
-												class="glyphicon glyphicon-remove"></span> Del</a></td>
+										<th class="text-center">EDIT/DELETE</th>
 
 									</tr>
 								</thead>
@@ -115,7 +121,10 @@ input[type=text], input[type=password] {
 											<td>${sel.sellerid}</td>
 											<td>${sel.sellername}</td>
 											<td>${sel.sellerdesc}</td>
-											<td></td>
+											<td class="text-center"><a class='btn btn-info btn-xs'
+												href="editseller?sellname=${sel.sellername}"><span class="glyphicon glyphicon-edit"></span>
+													Edit</a> <a href="deleteseller?sellname=${sel.sellername}" class="btn btn-danger btn-xs"><span
+													class="glyphicon glyphicon-remove"></span> Del</a></td>
 										</tr>
 									</c:forEach>
 								</tbody>

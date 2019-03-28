@@ -32,7 +32,7 @@ public class SellerController {
 	}
 
 	@RequestMapping("/addseller")
-	String addseller(@Valid @ModelAttribute("sellobject")Seller c,BindingResult bindingResult, Model model) {
+	String addSeller(@Valid @ModelAttribute("sellobject")Seller c,BindingResult bindingResult, Model model) {
 		try {
 			if(bindingResult.hasErrors())
 			{

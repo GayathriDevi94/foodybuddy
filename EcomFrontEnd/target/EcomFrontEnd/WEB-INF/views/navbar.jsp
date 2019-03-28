@@ -163,7 +163,9 @@
 
 
 
+
  
+
 
 
 
@@ -173,6 +175,8 @@
 li
 >
 a
+
+
 
 
 
@@ -193,7 +197,11 @@ color
 
 
 
+
+
 :green
+
+
 
 
 
@@ -359,6 +367,8 @@ color
 					<li><a href="login">Login</a></li>
 					<li><a href="category">Category</a></li>
 					<li><a href="seller">Seller</a></li>
+					<li><a href="product">Product</a></li>
+
 
 				</ul>
 			</div>

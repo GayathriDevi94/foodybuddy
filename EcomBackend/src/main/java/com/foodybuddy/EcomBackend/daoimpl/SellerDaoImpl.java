@@ -21,11 +21,6 @@ public class SellerDaoImpl implements SellerDao {
 		// TODO Auto-generated method stub
 		try
 		{
-			UserCred uc=new UserCred();
-			uc.setUsername(seller.getSellername());
-			uc.setPassword(seller.getSellerpass());
-			uc.setRole("ROLE_SELLER");
-			uc.setStatus(false);
 			sessionFactory.getCurrentSession().save(seller);
 			return true;
 		}

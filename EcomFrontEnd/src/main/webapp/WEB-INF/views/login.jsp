@@ -5,18 +5,19 @@ body {
 	font-weight: 400;
 	line-height: 0.5;
 	text-align: left;
-	background-image:url("resources/images/image30.jpg");
+	background-image: url("resources/images/image30.jpg");
 }
+
 .float {
 	z-index: 1;
 }
-.box
-{
-margin-top:15%;
+
+.box {
+	margin-top: 15%;
 }
 
 .form {
-	margin-top:100px;
+	margin-top: 100px;
 	margin-left: 100px;
 }
 
@@ -36,6 +37,11 @@ input[type="submit"] {
 	background-color: dark;
 	color: red;
 }
+
+.btn {
+	margin-left: 15%;
+	padding: 5px;
+}
 </style>
 
 <div class="container">
@@ -45,7 +51,7 @@ input[type="submit"] {
 			<div class="box">
 				<div class="float">
 					<form class="form" action="">
-					<div class="form-group">
+						<div class="form-group">
 							<label for="username" class="text-white"><font
 								color="red" size="5"> Username:</font></label><br> <input
 								type="text" name="username" id="username" class="form-control">
@@ -56,8 +62,8 @@ input[type="submit"] {
 								type="text" name="password" id="password" class="form-control">
 						</div>
 						<div class="form-group">
-							<input type="submit" name="submit" class="btn btn-info btn-xl"
-								value="LOGIN">
+							<button type="submit" class="btn btn-success">Sign Up</button>
+							<button type="submit" class="btn btn-danger">Cancel</button>
 						</div>
 					</form>
 

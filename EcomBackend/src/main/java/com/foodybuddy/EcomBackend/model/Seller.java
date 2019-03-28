@@ -6,6 +6,9 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Transient;
+import javax.validation.constraints.Pattern;
+
+import org.hibernate.validator.constraints.NotEmpty;
 @Entity
 public class Seller {
 	
@@ -13,22 +16,15 @@ public class Seller {
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private int sellerid;
 	
-	@Column(nullable=false,unique=false)
+	@Column(nullable=false,unique=true)
+	@NotEmpty(message="Seller name is mandatory")
+	@Pattern(regexp="[a-zA-Z ]{3,255}",message="can contain only alphabets max 255 char")
 	private String sellername;
 	
 	@Column(nullable=false)
+	@NotEmpty(message="Seller description is mandatory")
+	@Pattern(regexp="[0-9a-zA-Z ]{3,255}",message="can contain only alphabets and numbers max 255 char")
 	private String sellerdesc;
-
-	@Transient
-	private String sellerpass;
-	
-	public String getSellerpass() {
-		return sellerpass;
-	}
-
-	public void setSellerpass(String sellerpass) {
-		this.sellerpass = sellerpass;
-	}
 
 	public int getSellerid() {
 		return sellerid;

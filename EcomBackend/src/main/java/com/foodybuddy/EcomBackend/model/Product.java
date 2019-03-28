@@ -6,6 +6,11 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.Pattern;
+
+import org.hibernate.validator.constraints.NotEmpty;
 
 @Entity
 public class Product {
@@ -14,18 +19,36 @@ public class Product {
 	private int prodid;
 	
 	@Column(nullable=false)
+	@NotEmpty(message="Product name is mandatory")
+	@Pattern(regexp="[a-zA-Z ]{3,255}",message="can contain only alphabets max 255 char")
 	private String prodname;
 	
-	@Column(nullable=false)
+	@Column(nullable=false, columnDefinition="text")
+	@NotEmpty(message="Product description is mandatory")
 	private String proddesc;
 	
 	@ManyToOne
 	private Category prodcateg;
 	
+	public Seller getProdsell() {
+		return prodsell;
+	}
+
+	public void setProdsell(Seller prodsell) {
+		this.prodsell = prodsell;
+	}
+
+	@ManyToOne
+	private Seller prodsell;
+	
 	@Column(nullable=false)
+	@Min(value=100)
+	@Max(value=1000)
 	private int prodstock;
 	
 	@Column(nullable=false)
+	@Min(value=100)
+	@Max(value=1000)
 	private int prodprice;
 
 	public int getProdid() {

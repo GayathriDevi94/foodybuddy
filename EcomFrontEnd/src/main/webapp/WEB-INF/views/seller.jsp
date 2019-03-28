@@ -10,12 +10,13 @@ body {
 	background-image: url("resources/images/image30.jpg");
 }
 
-.container {
-	
-}
-
 .float {
 	z-index: 1;
+}
+.box
+{
+	margin-top:5%;
+
 }
 
 .form {
@@ -23,7 +24,7 @@ body {
 }
 
 input[type=text], input[type=password] {
-	width: 100%;
+	width:100%;
 	padding: 15px;
 	margin: 5px 0 22px 0;
 	display: inline-block;
@@ -32,6 +33,8 @@ input[type=text], input[type=password] {
 
 .registerbtn {
 	margin-left: 25%;
+		padding:5px;
+	
 }
 
 .container signin {
@@ -65,12 +68,13 @@ input[type=text], input[type=password] {
 			<div class="box">
 				<div class="float">
 					<div class="row">
+					<div class="col-md-6">
 					<c:if test="${!editmode}">
-							<h1 class="title">Seller</</h1>
+							<h1 class="title">Seller</h1>
 							<c:set var="action" value="addseller"></c:set>
 						</c:if>
 						<c:if test="${editmode}">
-							<h1 class="title">Edit Seller</</h1>
+							<h1 class="title">Edit Seller</h1>
 							<c:set var="action" value="updateseller"></c:set>
 						</c:if>
 						<form:form action="${action}" modelAttribute="sellobject">
@@ -79,10 +83,6 @@ input[type=text], input[type=password] {
 							</c:if>
 						
 							<div class="container">
-								<h1>
-									<font color="red">Seller name</font>
-								</h1>
-
 								<hr>
 								<div>
 									<label for="seller"><b><font color="red">Seller
@@ -104,6 +104,7 @@ input[type=text], input[type=password] {
 							</div>
 
 						</form:form>
+					</div>
 					</div>
 					<div class="row">
 						<div class="col-lg-12">

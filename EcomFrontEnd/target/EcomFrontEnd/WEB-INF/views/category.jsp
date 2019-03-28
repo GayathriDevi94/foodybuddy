@@ -21,6 +21,11 @@ body {
 .form {
 	margin-left: 145px;
 }
+.box
+{
+	margin-top:15%;
+
+}
 
 input[type=text], input[type=password] {
 	width: 75%;
@@ -66,7 +71,7 @@ input[type=text], input[type=password] {
 				<div class="float">
 					<div class="row">
 						<c:if test="${!editmode}">
-							<h1 class="title">Category</</h1>
+							<h1 class="title">Category</h1>
 							<c:set var="action" value="addcategory"></c:set>
 						</c:if>
 						<c:if test="${editmode}">

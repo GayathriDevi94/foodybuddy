@@ -44,7 +44,7 @@ public class ProductDaoImpl implements ProductDao {
 		// TODO Auto-generated method stub
 		try
 		{
-			sessionFactory.getCurrentSession().delete(prodid);
+			sessionFactory.getCurrentSession().delete(selectOneProduct(prodid));
 			return true;
 		}
 		catch(Exception e)
@@ -67,7 +67,7 @@ public class ProductDaoImpl implements ProductDao {
 		// TODO Auto-generated method stub
 		try
 		{
-			return (Product)sessionFactory.getCurrentSession().createQuery("from Product where prodid='"+prodid+"'").uniqueResult();
+			return (Product)sessionFactory.getCurrentSession().createQuery("from Product where prodid="+prodid).uniqueResult();
 		}
 		catch(Exception e)
 		{
@@ -75,3 +75,4 @@ public class ProductDaoImpl implements ProductDao {
 	}	}
 
 }
+ 

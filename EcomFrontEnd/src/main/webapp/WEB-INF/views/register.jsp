@@ -30,7 +30,7 @@ input[type=text], input[type=password] {
 	background: #f1f1f1;
 }
 
-.registerbtn {
+.btn {
 	margin-left: 25%;
 	padding:5px;
 }
@@ -72,8 +72,8 @@ input[type=text], input[type=password] {
 									name="psw-repeat" required>
 								<hr>
 							</div>
-							<button type="submit" class="registerbtn">Sign Up</button>
-							<button type="submit" class="registerbtn">Cancel</button>
+							<button type="submit" class="btn btn-success">Sign Up</button>
+							<button type="submit" class="btn btn-danger">Cancel</button>
 						</div>
 					</form>
 				</div>
