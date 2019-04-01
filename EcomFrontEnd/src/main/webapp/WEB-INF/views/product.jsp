@@ -52,8 +52,8 @@ input[type=radio], input[type=checkbox] {
 	display: initial;
 }
 
-input[type=text], select, textarea {
-	width: 50%;
+input[type=text], select, textarea, input[type=file] {
+	width: 100%;
 	padding: 15px;
 	margin: 5px 0 22px 0;
 	display: inline-block;
@@ -69,30 +69,30 @@ input[type=text], select, textarea {
 		<div class="alert alert-danger" role="alert">${message}</div>
 	</c:if>
 	<c:if test="${!editmode}">
-							<h1 class="title">Product</h1>
-							<c:set var="action" value="addproduct"></c:set>
-						</c:if>
-						<c:if test="${editmode}">
-							<h1 class="title">Edit Product</h1>
-							<c:set var="action" value="updateproduct"></c:set>
-						</c:if>
+		<h1 class="title">Product</h1>
+		<c:set var="action" value="addproduct"></c:set>
+	</c:if>
+	<c:if test="${editmode}">
+		<h1 class="title">Edit Product</h1>
+		<c:set var="action" value="updateproduct"></c:set>
+	</c:if>
 	<form:form class="form-horizontal" action="${action}" method="POST"
-		modelAttribute="prodobject">
+		modelAttribute="prodobject" enctype="multipart/form-data">
 		<c:if test="${editmode}">
-				<form:hidden path="prodid" />
-			</c:if>
+			<form:hidden path="prodid" />
+		</c:if>
 		<fieldset>
 			<div class="col-lg-12 form-group margin50">
 				<label class="col-lg-12" for="Name">Product Name</label>
 				<div class="col-lg-12">
-					<form:input type="text" id="name" name="Name" path="prodname" />
+					<form:input id="name" name="Name" path="prodname" />
 				</div>
 			</div>
 
 			<div class="col-lg-12 form-group margin50">
 				<label class="col-lg-12" for="Name">Product Description</label>
 				<div class="col-lg-12">
-					<form:input type="text" id="description" name="description"
+					<form:textarea type="text" id="description" name="description"
 						path="proddesc" />
 				</div>
 			</div>
@@ -127,6 +127,9 @@ input[type=text], select, textarea {
 							<form:option value="${sel.sellerid}">${sel.sellername}</form:option>
 						</c:forEach>
 					</form:select>
+					<label for="pimage"><b>Product Image</b></label>
+					<form:input type="file" name="fileToUpload" id="fileToUpload"
+						path="pimage" required="true" />
 					<button type="submit" class="btn btn-success">submit</button>
 
 				</div>
@@ -135,7 +138,7 @@ input[type=text], select, textarea {
 	</form:form>
 </div>
 <div class="row">
-	<div class="col-md-12">
+	<div class="col-lg-12">
 		<table class="table table-striped custab">
 			<thead>
 
@@ -147,6 +150,7 @@ input[type=text], select, textarea {
 					<th>PRICE</th>
 					<th>CATEGORY</th>
 					<th>SELLER</th>
+					<th>Product Image</th>
 					<th class="text-center">EDIT/DELETE</th>
 
 				</tr>
@@ -161,6 +165,8 @@ input[type=text], select, textarea {
 						<td>${prod.prodprice}</td>
 						<td>${prod.prodcateg.categname}</td>
 						<td>${prod.prodsell.sellername}</td>
+						<td><img src="resources/productimages/${prod.prodid}.jpg"
+							width="50" height="50" /></td>
 						<td class="text-center"><a class='btn btn-info btn-xs'
 							href="editproduct?prodid=${prod.prodid}"><span
 								class="glyphicon glyphicon-edit"></span> Edit</a> <a

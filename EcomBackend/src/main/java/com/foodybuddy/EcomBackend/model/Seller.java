@@ -23,7 +23,7 @@ public class Seller {
 	
 	@Column(nullable=false)
 	@NotEmpty(message="Seller description is mandatory")
-	@Pattern(regexp="[0-9a-zA-Z ]{3,255}",message="can contain only alphabets and numbers max 255 char")
+	@Pattern(regexp="[0-9a-zA-Z ]{3,500}",message="can contain only alphabets and numbers max 255 char")
 	private String sellerdesc;
 
 	public int getSellerid() {

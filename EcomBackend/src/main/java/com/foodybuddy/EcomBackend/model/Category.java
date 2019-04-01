@@ -21,7 +21,7 @@ public class Category {
 	
 	@Column(nullable=false)
 	@NotEmpty(message="Category description is mandatory")
-	@Pattern(regexp="[0-9a-zA-Z ]{3,255}",message="can contain only alphabets and numbers max 255 char")
+	@Pattern(regexp="[0-9a-zA-Z ]{3,500}",message="can contain only alphabets and numbers max 255 char")
 	private String categdesc;
 
 	public int getCategid() {

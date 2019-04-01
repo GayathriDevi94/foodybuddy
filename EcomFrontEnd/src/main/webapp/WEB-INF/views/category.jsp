@@ -110,6 +110,7 @@ input[type=text], input[type=password] {
 		</form:form>
 	</div>
 	<div class="row">
+			<div class="col-lg-12">
 		<table class="table table-striped custab" style="border-color: black;border-style: solid; border-width: 2px">
 			<thead style="color: Red; background-color: #00FF00;">
 			
@@ -138,8 +139,9 @@ input[type=text], input[type=password] {
 				</c:forEach>
 			</tbody>
 		</table>
+		</div>
 	</div>
 
 </div>
 
-</div>
+

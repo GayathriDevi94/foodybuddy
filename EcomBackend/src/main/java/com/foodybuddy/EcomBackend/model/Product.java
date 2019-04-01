@@ -6,11 +6,13 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.persistence.Transient;
 import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.Pattern;
 
 import org.hibernate.validator.constraints.NotEmpty;
+import org.springframework.web.multipart.MultipartFile;
 
 @Entity
 public class Product {
@@ -20,12 +22,15 @@ public class Product {
 	
 	@Column(nullable=false)
 	@NotEmpty(message="Product name is mandatory")
-	@Pattern(regexp="[a-zA-Z ]{3,255}",message="can contain only alphabets max 255 char")
+	@Pattern(regexp="[a-zA-Z0-9 ]{3,255}",message="can contain only alphabets max 255 char")
 	private String prodname;
 	
 	@Column(nullable=false, columnDefinition="text")
 	@NotEmpty(message="Product description is mandatory")
 	private String proddesc;
+	
+	@Transient
+	MultipartFile pimage;
 	
 	@ManyToOne
 	private Category prodcateg;
@@ -36,6 +41,14 @@ public class Product {
 
 	public void setProdsell(Seller prodsell) {
 		this.prodsell = prodsell;
+	}
+
+	public MultipartFile getPimage() {
+		return pimage;
+	}
+
+	public void setPimage(MultipartFile pimage) {
+		this.pimage = pimage;
 	}
 
 	@ManyToOne
