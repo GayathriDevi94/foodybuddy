@@ -1,5 +1,7 @@
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<c:set var="cr" value="${pageContext.request.contextPath}" />
+
 <style>
 body {
 	margin: 0;
@@ -7,7 +9,12 @@ body {
 	font-weight: 400;
 	line-height: 0.5;
 	text-align: left;
-	background-image: url("resources/images/image30.jpg");
+	background-image: url("${cr}/admin/resources/images/image30.jpg");
+}
+.style
+{
+	color:white;
+
 }
 
 .Product_Button {
@@ -70,11 +77,11 @@ input[type=text], select, textarea, input[type=file] {
 	</c:if>
 	<c:if test="${!editmode}">
 		<h1 class="title">Product</h1>
-		<c:set var="action" value="addproduct"></c:set>
+		<c:set var="action" value="${cr}/admin/addproduct"></c:set>
 	</c:if>
 	<c:if test="${editmode}">
 		<h1 class="title">Edit Product</h1>
-		<c:set var="action" value="updateproduct"></c:set>
+		<c:set var="action" value="${cr}/admin/updateproduct"></c:set>
 	</c:if>
 	<form:form class="form-horizontal" action="${action}" method="POST"
 		modelAttribute="prodobject" enctype="multipart/form-data">
@@ -139,8 +146,8 @@ input[type=text], select, textarea, input[type=file] {
 </div>
 <div class="row">
 	<div class="col-lg-12">
-		<table class="table table-striped custab">
-			<thead>
+		<table class="table table-striped custab style" style="border-color: black;border-style: solid; border-width: 2px">
+			<thead style="color: black; background-color: #00FF00;">
 
 				<tr>
 					<th>PRODUCT ID</th>
@@ -165,12 +172,12 @@ input[type=text], select, textarea, input[type=file] {
 						<td>${prod.prodprice}</td>
 						<td>${prod.prodcateg.categname}</td>
 						<td>${prod.prodsell.sellername}</td>
-						<td><img src="resources/productimages/${prod.prodid}.jpg"
+						<td><img src="${cr}/admin/resources/productimages/${prod.prodid}.jpg"
 							width="50" height="50" /></td>
 						<td class="text-center"><a class='btn btn-info btn-xs'
-							href="editproduct?prodid=${prod.prodid}"><span
+							href="${cr}/admin/editproduct?prodid=${prod.prodid}"><span
 								class="glyphicon glyphicon-edit"></span> Edit</a> <a
-							href="deleteproduct?prodid=${prod.prodid}"
+							href="${cr}/admin/deleteproduct?prodid=${prod.prodid}"
 							class="btn btn-danger btn-xs"><span
 								class="glyphicon glyphicon-remove"></span> Del</a></td>
 					</tr>

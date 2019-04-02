@@ -63,6 +63,17 @@ public class ProductDaoImpl implements ProductDao {
 		return null;
 		}	}
 
+	public List<Product> selectCatProducts(int id) {
+		// TODO Auto-generated method stub
+		try
+		{
+		return sessionFactory.getCurrentSession().createQuery("from Product where prodcateg="+id).list();	
+		}
+		catch(Exception e)
+		{
+		return null;
+		}	}
+
 	public Product selectOneProduct(int prodid) {
 		// TODO Auto-generated method stub
 		try

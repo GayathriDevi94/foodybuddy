@@ -14,6 +14,7 @@ import com.foodybuddy.EcomBackend.dao.SellerDao;
 import com.foodybuddy.EcomBackend.model.Category;
 import com.foodybuddy.EcomBackend.model.Seller;
 @Controller
+@RequestMapping("/admin")
 public class SellerController {
 	@Autowired
 	SellerDao selldao;

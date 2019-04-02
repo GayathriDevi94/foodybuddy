@@ -47,7 +47,7 @@
 		<div class="container">
 			<div class="row py-3">
 				<div class="col-md-9">
-					<p class="text-white">Lorem ipsum.</p>
+					<p class="text-white">Foody Buddy</p>
 				</div>
 				<div class="col-md-3">
 					<div class="d-inline-block">

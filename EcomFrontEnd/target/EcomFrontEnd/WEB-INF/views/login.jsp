@@ -1,3 +1,6 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<c:set var="cr" value="${pageContext.request.contextPath}" />
+
 <style>
 body {
 	margin: 0;
@@ -5,18 +8,19 @@ body {
 	font-weight: 400;
 	line-height: 0.5;
 	text-align: left;
-	background-image:url("resources/images/image30.jpg");
+	background-image: url("${cr}/resources/images/image30.jpg");
 }
+
 .float {
 	z-index: 1;
 }
-.box
-{
-margin-top:15%;
+
+.box {
+	margin-top: 15%;
 }
 
 .form {
-	margin-top:100px;
+	margin-top: 100px;
 	margin-left: 100px;
 }
 
@@ -36,6 +40,11 @@ input[type="submit"] {
 	background-color: dark;
 	color: red;
 }
+
+.btn {
+	margin-left: 15%;
+	padding: 5px;
+}
 </style>
 
 <div class="container">
@@ -44,20 +53,23 @@ input[type="submit"] {
 		<div id="login-column" class="col-md-6">
 			<div class="box">
 				<div class="float">
-					<form class="form" action="">
-					<div class="form-group">
+				<c:if test="${error}">
+						<div class="alert alert-danger" role="alert">UserName or Password is incorrect</div>
+					</c:if>
+					<form class="form" action="perform_login" method="post">
+						<div class="form-group">
 							<label for="username" class="text-white"><font
 								color="red" size="5"> Username:</font></label><br> <input
-								type="text" name="username" id="username" class="form-control">
+								type="text" name="user_name" id="username" class="form-control">
 						</div>
 						<div class="form-group">
 							<label for="password" class="text-white"><font
 								color="red" size="5">Password:</font></label><br> <input
-								type="text" name="password" id="password" class="form-control">
+								type="text" name="user_password" id="password" class="form-control">
 						</div>
 						<div class="form-group">
-							<input type="submit" name="submit" class="btn btn-info btn-xl"
-								value="LOGIN">
+							<button type="submit" class="btn btn-success">Sign Up</button>
+							<button type="submit" class="btn btn-danger">Cancel</button>
 						</div>
 					</form>
 

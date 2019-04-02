@@ -1,4 +1,6 @@
 com\foodybuddy\EcomFrontend\Controller\ProductController.class
+com\foodybuddy\EcomFrontend\Controller\LoginController.class
 com\foodybuddy\EcomFrontend\Controller\SellerController.class
+com\foodybuddy\EcomFrontend\Controller\CustomerRegisterController.class
 com\foodybuddy\EcomFrontend\Controller\CategoryController.class
 com\foodybuddy\EcomFrontend\Controller\HomeController.class

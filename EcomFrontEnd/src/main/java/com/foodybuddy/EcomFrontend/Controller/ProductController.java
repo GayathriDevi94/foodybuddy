@@ -68,7 +68,7 @@ public class ProductController {
 		}
 	}
 
-	@RequestMapping("/product")
+	@RequestMapping("/admin/product")
 	String productPage(Model model) {
 		model.addAttribute("prodobject", new Product());
 		model.addAttribute("productlist", proddao.selectAllProducts());
@@ -81,8 +81,28 @@ public class ProductController {
 		model.addAttribute("productPage", true);
 		return "index";
 	}
+	@RequestMapping("/viewproduct")
+	String viewproductPage(Model model) {
+		model.addAttribute("productlist", proddao.selectAllProducts());
+		model.addAttribute("categorylist", catdao.selectAllCategories());
+		model.addAttribute("viewproductPage", true);
+		return "index";
+	}
+	@RequestMapping("/viewoneproduct")
+	String viewoneproductPage(@RequestParam("prodid")int prodid, Model model) {
+		model.addAttribute("myproduct", proddao.selectOneProduct(prodid));
+		model.addAttribute("viewoneproductPage", true);
+		return "index";
+	}
+	@RequestMapping("/selectbycat")
+	String viewcatproductPage(@RequestParam("catid")int id, Model model) {
+		model.addAttribute("productlist", proddao.selectCatProducts(id));
+		model.addAttribute("categorylist", catdao.selectAllCategories());
+		model.addAttribute("viewproductPage", true);
+		return "index";
+	}
 
-	@RequestMapping("/addproduct")
+	@RequestMapping("/admin/addproduct")
 	String addProduct(@Valid @ModelAttribute("prodobject") Product p, BindingResult bindingResult, Model model) {
 		try {
 			if (bindingResult.hasErrors()) {
@@ -116,7 +136,7 @@ public class ProductController {
 
 	}
 
-	@RequestMapping("/deleteproduct")
+	@RequestMapping("/admin/deleteproduct")
 	String deleteProduct(@RequestParam("prodid") int prodid, Model model) {
 		if (proddao.deleteProduct(prodid)) {
 			deleteimage(prodid);
@@ -135,7 +155,7 @@ public class ProductController {
 
 	}
 
-	@RequestMapping("/editproduct")
+	@RequestMapping("/admin/editproduct")
 	String editCategory(@RequestParam("prodid") int prodid, Model model) {
 		model.addAttribute("editmode", true);
 		model.addAttribute("success", false);
@@ -150,7 +170,7 @@ public class ProductController {
 
 	}
 
-	@RequestMapping("/updateproduct")
+	@RequestMapping("/admin/updateproduct")
 	String updateProduct(@Valid @ModelAttribute("prodobject") Product p, BindingResult bindingResult, Model model) {
 		try {
 			if (bindingResult.hasErrors()) {

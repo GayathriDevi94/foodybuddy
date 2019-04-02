@@ -1,3 +1,7 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<c:set var="cr" value="${pageContext.request.contextPath}" />
+
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <style>
 body {
 	margin: 0;
@@ -5,7 +9,7 @@ body {
 	font-weight: 400;
 	line-height: 0.5;
 	text-align: left;
-	background-image: url("resources/images/image30.jpg");
+	background-image: url("${cr}/resources/images/image30.jpg");
 }
 
 .float {
@@ -30,15 +34,14 @@ input[type=text], input[type=password] {
 	background: #f1f1f1;
 }
 
-.registerbtn {
+.btn {
 	margin-left: 25%;
-	padding:5px;
+	padding: 5px;
 }
 
 .container signin {
 	margin-left: 25%;
-		padding:5px;
-	
+	padding: 5px;
 }
 </style>
 
@@ -48,36 +51,59 @@ input[type=text], input[type=password] {
 		<div id="login-column" class="col-md-6">
 			<div class="box">
 				<div class="float">
+					<c:if test="${success}">
+						<div class="alert alert-success" role="alert">changes
+							updated Successfully</div>
+					</c:if>
+					<c:if test="${error}">
+						<div class="alert alert-danger" role="alert">${message}</div>
+					</c:if>
 
-					<form action="/action_page.php">
+					<form:form action="addcustomer" modelAttribute="regobject">
 						<div class="container">
 							<h1 align="center">
 								<font color="red">Register</font>
 							</h1>
-							
+
 							<hr>
 							<div>
-								<label for="email"><b><font color="red">Email</font></b></label>
-								<input type="text" placeholder="Enter Email" name="email"
-									required>
+								<label for="name"><b><font color="red">Name</font></b></label>
+								<form:input type="text" placeholder="Enter name" name="name"
+									path="custname" />
+									<form:errors path="custname" cssStyle="color:Red"></form:errors>
 							</div>
+
 							<div>
 								<label for="psw"><b><font color="red">Password</font></b></label>
-								<input type="password" placeholder="Enter Password" name="psw"
-									required>
+								<form:input type="password" placeholder="Enter Password"
+									name="psw" path="custpass" />
+									<form:errors path="custpass" cssStyle="color:Red"></form:errors>
 							</div>
 							<div>
-								<label for="psw-repeat"><b><font color="red">Repeat
-											Password</font></b></label> <input type="password" placeholder="Repeat Password"
-									name="psw-repeat" required>
-								<hr>
+								<label for="email"><b><font color="red">Email</font></b></label>
+								<form:input type="text" placeholder="Enter Email" name="email"
+									path="custemailid" />
+									<form:errors path="custemailid" cssStyle="color:Red"></form:errors>
 							</div>
-							<button type="submit" class="registerbtn">Sign Up</button>
-							<button type="submit" class="registerbtn">Cancel</button>
+							<div>
+								<label for="Phone number"><b><font color="red">Phone
+											number</font></b></label>
+								<form:input type="text" placeholder="Enter Phone Number"
+									name="Phone number" path="custphonenumber" />
+									<form:errors path="custphonenumber" cssStyle="color:Red"></form:errors>
+							</div>
+							<hr>
+
+							<button type="submit" class="btn btn-success">Register</button>
+							<button type="submit" class="btn btn-danger">Cancel</button>
 						</div>
-					</form>
+					</form:form>
 				</div>
 			</div>
+
 		</div>
+
 	</div>
+
+
 </div>

@@ -1,5 +1,7 @@
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<c:set var="cr" value="${pageContext.request.contextPath}" />
+
 <style>
 body {
 	margin: 0;
@@ -7,7 +9,7 @@ body {
 	font-weight: 400;
 	line-height: 0.5;
 	text-align: left;
-	background-image: url("resources/images/image30.jpg");
+	background-image: url("${cr}/admin/resources/images/image30.jpg");
 }
 
 .float {
@@ -71,11 +73,11 @@ input[type=text], input[type=password] {
 					<div class="col-md-6">
 					<c:if test="${!editmode}">
 							<h1 class="title">Seller</h1>
-							<c:set var="action" value="addseller"></c:set>
+							<c:set var="action" value="${cr}/admin/addseller"></c:set>
 						</c:if>
 						<c:if test="${editmode}">
 							<h1 class="title">Edit Seller</h1>
-							<c:set var="action" value="updateseller"></c:set>
+							<c:set var="action" value="${cr}/admin/updateseller"></c:set>
 						</c:if>
 						<form:form action="${action}" modelAttribute="sellobject">
 						<c:if test="${editmode}">
@@ -126,8 +128,8 @@ input[type=text], input[type=password] {
 											<td>${sel.sellername}</td>
 											<td>${sel.sellerdesc}</td>
 											<td class="text-center"><a class='btn btn-info btn-xs'
-												href="editseller?sellname=${sel.sellername}"><span class="glyphicon glyphicon-edit"></span>
-													Edit</a> <a href="deleteseller?sellname=${sel.sellername}" class="btn btn-danger btn-xs"><span
+												href="${cr}/admin/editseller?sellname=${sel.sellername}"><span class="glyphicon glyphicon-edit"></span>
+													Edit</a> <a href="${cr}/admin/deleteseller?sellname=${sel.sellername}" class="btn btn-danger btn-xs"><span
 													class="glyphicon glyphicon-remove"></span> Del</a></td>
 										</tr>
 									</c:forEach>

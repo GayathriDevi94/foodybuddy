@@ -1,3 +1,5 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<c:set var="cr" value="${pageContext.request.contextPath}" />
 <style>
 body {
 	margin: 0;
@@ -5,7 +7,7 @@ body {
 	font-weight: 400;
 	line-height: 0.5;
 	text-align: left;
-	background-image:url("resources/images/image30.jpg");
+	background-image:url("${cr}/resources/images/image30.jpg");
 }
 
 .mystyle1 {

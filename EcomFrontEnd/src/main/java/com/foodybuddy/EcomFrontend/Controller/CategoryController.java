@@ -14,6 +14,7 @@ import com.foodybuddy.EcomBackend.dao.CategoryDao;
 import com.foodybuddy.EcomBackend.model.Category;
 
 @Controller
+@RequestMapping("/admin")
 public class CategoryController {
 	@Autowired
 	CategoryDao catdao;

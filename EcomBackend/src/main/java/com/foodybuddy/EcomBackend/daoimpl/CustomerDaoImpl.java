@@ -28,6 +28,7 @@ public class CustomerDaoImpl implements CustomerDao {
 			uc.setRole("ROLE_CUSTOMER");
 			uc.setStatus(false);
 			sessionFactory.getCurrentSession().save(customer);
+			sessionFactory.getCurrentSession().save(uc);
 			return true;
 		} catch (Exception e) {
 			return false;
