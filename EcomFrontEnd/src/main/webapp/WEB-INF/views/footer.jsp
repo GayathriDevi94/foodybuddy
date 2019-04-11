@@ -1,6 +1,6 @@
 <style>
 .bg-primary {
- background-color: #000 !important;
+ background-color: #F93535 !important;
 }
 
 .bg-circle

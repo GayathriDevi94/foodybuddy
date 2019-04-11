@@ -13,9 +13,7 @@ http://www.springframework.org/schema/security/spring-security.xsd">
 		<security:intercept-url pattern="/admin/**"
 			access="hasRole('ROLE_ADMIN')" />
 		<security:intercept-url pattern="/user/**"
-			access="hasRole('ROLE_USER')" />
-		<security:intercept-url pattern="/seller/**"
-			access="hasRole('ROLE_SELLER')" />
+			access="hasRole('ROLE_CUSTOMER')" />
 	<security:intercept-url pattern="/**"
 			access="permitAll" />
 		<security:form-login login-page="/login"

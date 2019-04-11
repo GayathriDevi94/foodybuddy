@@ -234,25 +234,25 @@ to {
 	<div data-u="slides"
 		style="cursor: default; position: relative; top: 0px; left: 0px; width: 980px; height: 380px; overflow: hidden;">
 		<div>
-			<img data-u="image" src="${cr}/resources\images\image11.png" />
+			<img data-u="image" src="${cr}/resources/images/image11.png" />
 		</div>
 		<div>
-			<img data-u="image" src="${cr}/resources\images\image10.png" />
+			<img data-u="image" src="${cr}/resources/images/image10.png" />
 		</div>
 		<div>
-			<img data-u="image" src="${cr}/resources\images\image13.png" />
+			<img data-u="image" src="${cr}/resources/images/image13.png" />
 		</div>
 		<div>
-			<img data-u="image" src="${cr}/resources\images\images3.png" />
+			<img data-u="image" src="${cr}/resources/images/images3.png" />
 		</div>
 		<div>
-			<img data-u="image" src="${cr}/resources\images\image4.png" />
+			<img data-u="image" src="${cr}/resources/images/image4.png" />
 		</div>
 		<div>
-			<img data-u="image" src="${cr}/resources\images\image6.png" />
+			<img data-u="image" src="${cr}/resources/images/image6.png" />
 		</div>
 		<div>
-			<img data-u="image" src="${cr}/resources\images\image7.png" />
+			<img data-u="image" src="${cr}/resources/images/image7.png" />
 		</div>
 	</div>
 	<!-- Bullet Navigator -->

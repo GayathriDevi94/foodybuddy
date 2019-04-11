@@ -9,7 +9,7 @@ body {
 	font-weight: 400;
 	line-height: 0.5;
 	text-align: left;
-	background-image: url("${cr}/admin/resources/images/image30.jpg");
+	background-image: url("${cr}/resources/images/image30.jpg");
 }
 
 .float {

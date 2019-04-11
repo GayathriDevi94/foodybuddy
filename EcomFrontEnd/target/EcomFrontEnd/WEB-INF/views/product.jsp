@@ -9,7 +9,7 @@ body {
 	font-weight: 400;
 	line-height: 0.5;
 	text-align: left;
-	background-image: url("${cr}/admin/resources/images/image30.jpg");
+	background-image: url("${cr}/resources/images/image30.jpg");
 }
 .style
 {
@@ -147,7 +147,7 @@ input[type=text], select, textarea, input[type=file] {
 <div class="row">
 	<div class="col-lg-12">
 		<table class="table table-striped custab style" style="border-color: black;border-style: solid; border-width: 2px">
-			<thead style="color: black; background-color: #00FF00;">
+			<thead style="color: black; background-color: #F54040;">
 
 				<tr>
 					<th>PRODUCT ID</th>
@@ -172,7 +172,7 @@ input[type=text], select, textarea, input[type=file] {
 						<td>${prod.prodprice}</td>
 						<td>${prod.prodcateg.categname}</td>
 						<td>${prod.prodsell.sellername}</td>
-						<td><img src="${cr}/admin/resources/productimages/${prod.prodid}.jpg"
+						<td><img src="${cr}/resources/productimages/${prod.prodid}.jpg"
 							width="50" height="50" /></td>
 						<td class="text-center"><a class='btn btn-info btn-xs'
 							href="${cr}/admin/editproduct?prodid=${prod.prodid}"><span

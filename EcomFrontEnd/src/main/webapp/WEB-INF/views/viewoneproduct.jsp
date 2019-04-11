@@ -64,7 +64,6 @@
 .pagination {
 	margin-top: 20px;
 }
-
 </style>
 
 <link
@@ -93,19 +92,52 @@
 					<p class="price_discounted"
 						style="color: #0762ff; font-size: 110%;">${myproduct.prodsell.sellername}</p>
 					<p class="price_discounted ">Rs.${myproduct.prodprice}</p>
-					<form method="get" action="cart.html">
+					<form action="${cr}/AddToCart">
 						<div class="form-group">
 
 							<label>Quantity :</label>
 							<div class="input-group mb-3">
+							<input type="hidden" name="pid" value="${myproduct.prodid}">
 								<input type="text" class="form-control" id="quantity"
 									name="quantity" min="1" max="100" value="1">
 							</div>
 						</div>
-						<a href="cart.html"
-							class="btn btn-success btn-lg btn-block text-uppercase"> <i
-							class="fa fa-shopping-cart"></i> Add To Cart
-						</a>
+						<c:if test="${myproduct.prodstock>=4}">
+							<button
+								class="btn btn-success btn-lg btn-block text-uppercase"> <i
+								class="fa fa-shopping-cart"></i> Add To Cart
+							</button>
+						</c:if>
+						<c:if test="${myproduct.prodstock==0}">
+							<p align="center">
+								<font size="5" color="red">OOPS OUT OF STOCK</font>
+							</p>
+						</c:if>
+						<c:if test="${myproduct.prodstock==1}">
+							<a href="${cr}/AddToCart?pid=${myproduct.prodid}"
+								class="btn btn-success btn-lg btn-block text-uppercase"> <i
+								class="fa fa-shopping-cart"></i> <p align="center"> Add To Cart-Only 1
+								order left</p>
+								<font size="5" color="red">HURRY UP !!!</font>
+							</a>
+						</c:if>
+						<c:if test="${myproduct.prodstock==2}">
+							<button
+								class="btn btn-success btn-lg btn-block text-uppercase"> <i
+								class="fa fa-shopping-cart"></i> <p align="center">Add To Cart-only 2
+								orders left</p>
+								<font size="5" color="red">HURRY UP !!!</font>
+							</button>
+						</c:if>
+						<c:if test="${myproduct.prodstock==3}">
+							<button
+								class="btn btn-success btn-lg btn-block text-uppercase"> <i
+								class="fa fa-shopping-cart"></i> <p align="center">Add To Cart-only 3
+								orders left</p>
+								<font size="5" color="red">HURRY UP !!!</font>
+							</button>
+						</c:if>
+
 					</form>
 
 				</div>

@@ -65,10 +65,10 @@ input[type="submit"] {
 						<div class="form-group">
 							<label for="password" class="text-white"><font
 								color="red" size="5">Password:</font></label><br> <input
-								type="text" name="user_password" id="password" class="form-control">
+								type="password" name="user_password" id="password" class="form-control">
 						</div>
 						<div class="form-group">
-							<button type="submit" class="btn btn-success">Sign Up</button>
+							<button type="submit" class="btn btn-success">Login</button>
 							<button type="submit" class="btn btn-danger">Cancel</button>
 						</div>
 					</form>
