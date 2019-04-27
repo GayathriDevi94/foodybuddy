@@ -29,11 +29,13 @@ public class Product {
 	@NotEmpty(message="Product description is mandatory")
 	private String proddesc;
 	
+	
 	@Transient
 	MultipartFile pimage;
 	
 	@ManyToOne
 	private Category prodcateg;
+	
 	
 	public Seller getProdsell() {
 		return prodsell;

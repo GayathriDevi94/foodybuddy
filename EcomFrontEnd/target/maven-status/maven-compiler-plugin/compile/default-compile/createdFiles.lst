@@ -2,6 +2,7 @@ com\foodybuddy\EcomFrontend\Controller\AddressController.class
 com\foodybuddy\EcomFrontend\Controller\CartController.class
 com\foodybuddy\EcomFrontend\Controller\SellerController.class
 com\foodybuddy\EcomFrontend\Controller\CustomerRegisterController.class
+com\foodybuddy\EcomFrontend\Controller\OrderController.class
 com\foodybuddy\EcomFrontend\Controller\CategoryController.class
 com\foodybuddy\EcomFrontend\Controller\HomeController.class
 com\foodybuddy\EcomFrontend\Controller\ProductController.class

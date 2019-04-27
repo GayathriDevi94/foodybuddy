@@ -7,8 +7,8 @@ body {
 	margin: 0;
 	font-size: .9rem;
 	font-weight: 400;
-	line-height: 0.5;
-	text-align: left;
+	line-height: 1.6;
+	align: center;
 	background-image: url("${cr}/resources/images/image30.jpg");
 }
 .style
@@ -66,6 +66,10 @@ input[type=text], select, textarea, input[type=file] {
 	display: inline-block;
 	border: none;
 }
+.box
+{
+margin-top: 5%;
+}
 </style>
 <div class="container">
 	<c:if test="${success}">
@@ -75,12 +79,13 @@ input[type=text], select, textarea, input[type=file] {
 	<c:if test="${error}">
 		<div class="alert alert-danger" role="alert">${message}</div>
 	</c:if>
+	<div class="box">
 	<c:if test="${!editmode}">
-		<h1 class="title">Product</h1>
+		<h1 class="title" align="center">Product</h1>
 		<c:set var="action" value="${cr}/admin/addproduct"></c:set>
 	</c:if>
 	<c:if test="${editmode}">
-		<h1 class="title">Edit Product</h1>
+		<h1 class="title" align="center">Edit Product</h1>
 		<c:set var="action" value="${cr}/admin/updateproduct"></c:set>
 	</c:if>
 	<form:form class="form-horizontal" action="${action}" method="POST"
@@ -89,6 +94,7 @@ input[type=text], select, textarea, input[type=file] {
 			<form:hidden path="prodid" />
 		</c:if>
 		<fieldset>
+		<hr>
 			<div class="col-lg-12 form-group margin50">
 				<label class="col-lg-12" for="Name">Product Name</label>
 				<div class="col-lg-12">
@@ -137,7 +143,7 @@ input[type=text], select, textarea, input[type=file] {
 					<label for="pimage"><b>Product Image</b></label>
 					<form:input type="file" name="fileToUpload" id="fileToUpload"
 						path="pimage" required="true" />
-					<button type="submit" class="btn btn-success">submit</button>
+					<button type="submit" class="btn btn-success">Add Product</button>
 
 				</div>
 			</div>
@@ -185,5 +191,5 @@ input[type=text], select, textarea, input[type=file] {
 			</tbody>
 		</table>
 	</div>
-
+</div>
 </div>

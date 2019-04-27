@@ -58,6 +58,12 @@
 		<c:if test="${addressPage}">
 			<jsp:include page="Address.jsp" />
 		</c:if>
+		<c:if test="${orderPage}">
+			<jsp:include page="order.jsp" />
+		</c:if>
+		<c:if test="${receiptPage}">
+			<jsp:include page="receipt.jsp" />
+		</c:if>
 	</div>
 	<jsp:include page="footer.jsp"></jsp:include>
 </body>

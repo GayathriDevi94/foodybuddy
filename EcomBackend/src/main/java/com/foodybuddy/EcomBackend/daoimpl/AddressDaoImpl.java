@@ -23,7 +23,6 @@ public class AddressDaoImpl implements AddressDao {
 			return true;
 
 		} catch (Exception e) {
-			System.out.println(e.getMessage());
 			return false;
 		}
 	}
@@ -34,7 +33,6 @@ public class AddressDaoImpl implements AddressDao {
 			sessionFactory.getCurrentSession().update(address);
 			return true;
 		} catch (Exception e) {
-			System.out.println(e.getMessage());
 			return false;
 		}
 	}
@@ -56,7 +54,6 @@ public class AddressDaoImpl implements AddressDao {
 		try {
 			return sessionFactory.getCurrentSession().createQuery("from Address where customer_custid="+custid).list();
 		} catch (Exception e) {
-			System.out.println(e.getMessage());
 			return null;
 		}
 	}
@@ -67,7 +64,6 @@ public class AddressDaoImpl implements AddressDao {
 			return (Address) sessionFactory.getCurrentSession().createQuery("from Address where addressid=" + addressid).uniqueResult();
 
 		} catch (Exception e) {
-			System.out.println(e.getMessage());
 			return null;
 		}
 

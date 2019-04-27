@@ -57,7 +57,7 @@ public class MyOrderDaoImpl implements MyOrderDao {
 	public List<MyOrder> selectAllMyOrders(Customer customer) {
 		// TODO Auto-generated method stub
 		try {
-			return sessionFactory.getCurrentSession().createQuery("from MyOrder where Customer="+customer.getCustid()).list();
+			return sessionFactory.getCurrentSession().createQuery("from MyOrder where customer="+customer.getCustid()).list();
 		} catch (Exception e) {
 			return null;
 		}

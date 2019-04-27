@@ -66,6 +66,10 @@
 .pagination {
 	margin-top: 20px;
 }
+.container
+{
+align:center;
+}
 </style>
 <link
 	href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
@@ -85,7 +89,7 @@
 	<div class="col mb-2">
 		<div class="row">
 			<div class="col-sm-12  col-md-6">
-				<button class="btn btn-block btn-light">Continue Shopping</button>
+				<button class="btn btn-block btn-success" >Continue Shopping</button>
 			</div>
 		</div>
 	</div>

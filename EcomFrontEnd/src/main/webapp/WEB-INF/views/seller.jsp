@@ -7,8 +7,8 @@ body {
 	margin: 0;
 	font-size: .9rem;
 	font-weight: 400;
-	line-height: 0.5;
-	text-align: left;
+	line-height: 1.6;
+	align: center;
 	background-image: url("${cr}/resources/images/image30.jpg");
 }
 
@@ -55,6 +55,11 @@ input[type=text], input[type=password] {
 	box-shadow: 3px 3px 0px transparent;
 	transition: 0.5s;
 }
+
+.btn {
+	margin-left: 50%;
+	padding: 5px;
+}
 </style>
 
 <div class="container">
@@ -70,9 +75,9 @@ input[type=text], input[type=password] {
 			<div class="box">
 				<div class="float">
 					<div class="row">
-					<div class="col-md-6">
+					<div class="col-lg-12">
 					<c:if test="${!editmode}">
-							<h1 class="title">Seller</h1>
+							<h1 class="title" align="center">Seller</h1>
 							<c:set var="action" value="${cr}/admin/addseller"></c:set>
 						</c:if>
 						<c:if test="${editmode}">
@@ -100,7 +105,7 @@ input[type=text], input[type=password] {
 								</div>
 
 
-								<button type="submit" class="registerbtn">submit</button>
+								<button type="submit" class="btn btn-success">Add Seller</button>
 
 
 							</div>
@@ -110,8 +115,8 @@ input[type=text], input[type=password] {
 					</div>
 					<div class="row">
 						<div class="col-lg-12">
-							<table class="table table-striped custab">
-								<thead>
+<table class="table table-striped custab style" style="border-color: black;border-style: solid; border-width: 2px">
+			<thead style="color: black; background-color: #F54040;">								
 
 									<tr>
 										<th>SELLER ID</th>
